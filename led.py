@@ -13,4 +13,11 @@ class Led:
     def lef_off(self):
         self._board.GPIO.output(self._pin, self._board.GPIO.LOW)
 
-
+if __name__ == "__main__":
+    from board import Board
+    from time import sleep
+    rpi = Board()
+    led = Led(rpi, )
+    led.led_on()
+    sleep()
+    led.led_off()
