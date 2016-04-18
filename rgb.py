@@ -39,16 +39,16 @@ if __name__ == "__main__":
     from board import Board
     from time import sleep
     B = Board
-    led = RGB_led()
+    led = RGB_led(B, 21, 20, 16)
 
     led.red_on()
-    sleep(1)
+    sleep(3)
     led.turn_off()
     led.green_on()
-    sleep(1)
+    sleep(3)
     led.turn_off()
     led.blue_on()
-    sleep(1)
+    sleep(3)
     led.turn_off()
 
 
