@@ -25,6 +25,37 @@ class RGB_led:
         self.turn_off()
         self.__board.GPIO.output(self.__green_pin, self.__board.GPIO.HIGH)
 
+    def blue_on(self):
+        '''blue led turns on'''
+        self.turn_off()
+        self.__board.GPIO.output(self.__blue_pin, self.__board.GPIO.HIGH)
+
+    def turn_off(self):
+        '''turns all the leds off before'''
+        for pin in self.__outputs:
+            self.__board.GPIO.output(pin, self.__board.GPIO.LOW)
+
+if __name__ == "__main__":
+    from board import Board
+    from time import sleep
+    B = Board
+    led = RGB_led()
+
+    led.red_on()
+    sleep(1)
+    led.turn_off()
+    led.green_on()
+    sleep(1)
+    led.turn_off()
+    led.blue_on()
+    sleep(1)
+    led.turn_off()
+
+
+
+
+
+
 
 
 
