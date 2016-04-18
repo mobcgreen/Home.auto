@@ -1,17 +1,17 @@
 class Led:
     def __init__(self, gpio_object, pin):
-        self.__board = gpio_object
-        self.__pin = pin
-        self.__setup_led()
+        self._board = gpio_object
+        self._pin = pin
+        self._setup_led()
 
-    def __setup_led(self):
-        self.__board.GPIO.setup(self.__pin, self.__board.GPIO.OUT)
+    def _setup_led(self):
+        self._board.GPIO.setup(self._pin, self._board.GPIO.OUT)
 
     def led_on(self):
-        self.__board.GPIO.output(self.__pin, self.__board.GPIO.HIGH)
+        self._board.GPIO.output(self._pin, self._board.GPIO.HIGH)
 
     def led_off(self):
-        self.__board.GPIO.output(self.__pin, self.__board.GPIO.LOW)
+        self._board.GPIO.output(self._pin, self._board.GPIO.LOW)
 
 if __name__ == "__main__":
     from board import Board
