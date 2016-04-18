@@ -17,8 +17,8 @@ if __name__ == "__main__":
     from board import Board
     from time import sleep
     rpi = Board()
-    led = Led(rpi, )
+    led = Led(rpi, 13)
     led.led_on()
-    sleep()
+    sleep(3)
     led.led_off()
 
