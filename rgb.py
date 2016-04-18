@@ -38,7 +38,7 @@ class RGB_led:
 if __name__ == "__main__":
     from board import Board
     from time import sleep
-    B = Board
+    B = Board()
     led = RGB_led(B, 21, 20, 16)
 
     led.red_on()
