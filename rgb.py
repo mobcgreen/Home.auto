@@ -1,6 +1,6 @@
 
 class RGB_led:
-    def __int__(self, gpio_object, r, g, b):
+    def __init__(self, gpio_object, r, g, b):
         self.__red_pin = r
         self.__green_pin = g
         self.__blue_pin = b
@@ -39,7 +39,7 @@ if __name__ == "__main__":
     from board import Board
     from time import sleep
     B = Board()
-    led = RGB_led(B, 21, 20, 16)
+    led = RGB_led(B, 20, 21, 16)
 
     led.red_on()
     sleep(3)
