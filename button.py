@@ -39,7 +39,7 @@ class Button:
             if button.pressed:
                 print('button pressed')
                 button.pressed = False
-        rpi.GPIO.cleanup(
+        rpi.GPIO.cleanup()
 
 
             
