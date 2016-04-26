@@ -8,7 +8,7 @@ class Button:
         self.__pressed = False
 
     @property
-        def pressed(self):
+    def pressed(self):
         return self.__pressed
 
     @pressed.setter
