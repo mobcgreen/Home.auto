@@ -16,16 +16,13 @@ class Button:
         self.__pressed = value
 
     def __setup_button(self, resistor=False):
-        if not resistor:
-            self.__board.GPIO.setup(self.__pin, self.__board.GPIO.IN)
-        elif resistor:
+        if resistor:
             self.__board.GPIO.set(self.__pin, self.__board.GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
         else:
             print('Resistor not set up')
 
          #add interrupt
             self.__board.GPIO.add_event_detect(self.__pin, self.__board.GPIO.FALLING, callback=self.__my_callback, bouncetime=300)
-            print('step2')
 
     def __my_callback(self, channel):
         self.pressed = True
