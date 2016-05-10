@@ -16,7 +16,7 @@ class Button:
         self.__pressed = value
 
     def __setup_button(self):
-            self.__board.GPIO.set(self.__pin, self.__board.GPIO.IN, pull_up_down=self.__board.GPIO.PUD_DOWN)
+            self.__board.GPIO.set(self.__pin, self.__board.GPIO.IN, pull_up_down=self.__board.GPIO.PUD_UP)
             #add interrupt
             self.__board.GPIO.add_event_detect(self.__pin, self.__board.GPIO.FALLING, callback=self.__my_callback, bouncetime=300)
 
