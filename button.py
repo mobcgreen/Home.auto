@@ -1,7 +1,7 @@
 from time import sleep
 
 class Button:
-    def __int__(self, gpio_object, pin):
+    def __init__(self, gpio_object, pin):
         self.__board = gpio_object
         self.__pin = pin
         self.__setup_button(22)
@@ -30,8 +30,9 @@ class Button:
         self.pressed = True
 
 
-    if __name__ == "__main__":
+    if __name__ == "_main_":
         from board import Board
+        from button import Button
         rpi = Board()
         button = Button(rpi, 22)
 
