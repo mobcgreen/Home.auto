@@ -30,7 +30,7 @@ class Button:
         self.pressed = True
 
 
-    if __name__ == "_main_":
+    if __name__ == "__main__":
         from board import Board
         from button import Button
         rpi = Board()
