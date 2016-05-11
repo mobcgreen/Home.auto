@@ -38,7 +38,7 @@ if __name__ == "__main__":
     from board import Board
     rpi = Board()
     print('DEBUG: Board instance created')
-    button = Button(rpi, 7)
+    button = Button(rpi, 22)
     print('DEBUG: Button set up on pin 22')
     while True:
         if button.pressed:
