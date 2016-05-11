@@ -4,7 +4,7 @@ class Button:
     def __init__(self, gpio_object, pin):
         self.__board = gpio_object
         self.__pin = pin
-        self.__setup_button(True)
+        self.__setup_button()
         self.__pressed = False
 
     @property
@@ -16,7 +16,7 @@ class Button:
         self.__pressed = value
 
 
-    def __setup_button(self, resistor=False):
+    def __setup_button(self, resistor=True):
         if not resistor:
             self.__board.GPIO.setup(self.__pin, self.__board.GPIO.IN)
             print('Button set up on pin: ' + str(self.__pin))
