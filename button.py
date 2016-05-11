@@ -35,9 +35,11 @@ class Button:
 if __name__ == "__main__":
     from board import Board
     rpi = Board()
-    button = Button(rpi, 7)
-
+    print('DEBUG: Board instance created')
+    button = Button(rpi, 22)
+    print('DEBUG: Button set up on pin 22')
     while True:
+        print('DEBUG: button.pressed = ' + str(button.pressed))
         if button.pressed:
             print('button pressed')
             button.pressed = False
