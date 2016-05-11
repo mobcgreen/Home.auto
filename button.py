@@ -20,7 +20,7 @@ class Button:
         if not resistor:
             self.__board.GPIO.setup(self.__pin, self.__board.GPIO.IN)
         elif resistor:
-            self.__board.GPIO.set(self.__pin, self.__board.GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+            self.__board.GPIO.set(self.__pin, self.__board.GPIO.IN, pull_up_down=GPIO.PUD_UP)
         else:
             print('Error setting up resistor')
 
