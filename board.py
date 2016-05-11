@@ -1,6 +1,5 @@
 import RPi.GPIO
 from time import sleep
-import RPi.GPIO
 
 class Board:
 

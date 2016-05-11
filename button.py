@@ -4,7 +4,7 @@ class Button:
     def __init__(self, gpio_object, pin):
         self.__board = gpio_object
         self.__pin = pin
-        self.__setup_button()
+        self.__setup_button(True)
         self.__pressed = False
 
     @property
@@ -41,7 +41,7 @@ if __name__ == "__main__":
     button = Button(rpi, 7)
     print('DEBUG: Button set up on pin 22')
     while True:
-        if not button.pressed:
+        if button.pressed:
             print('button pressed')
-            button.pressed = True
+            button.pressed = False
     rpi.GPIO.cleanup()
