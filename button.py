@@ -19,17 +19,17 @@ class Button:
     def __setup_button(self, resistor=True):
         if not resistor:
             self.__board.GPIO.setup(self.__pin, self.__board.GPIO.IN)
-            print('Button set up on pin: ' + str(self.__pin))
+            #print('Button set up on pin: ' + str(self.__pin))
         elif resistor:
             self.__board.GPIO.setup(self.__pin, self.__board.GPIO.IN, pull_up_down=self.__board.GPIO.PUD_UP)
         else:
-            print('Error setting up resistor')
+            #print('Error setting up resistor')
 
         # add interrupt
         self.__board.GPIO.add_event_detect(self.__pin, self.__board.GPIO.FALLING, callback=self.__my_callback, bouncetime=300)
-        print('DEBUG: Set up interrupt')
+        #print('DEBUG: Set up interrupt')
     def __my_callback(self, channel):
-        print('DEBUG: Callback ran')
+        #print('DEBUG: Callback ran')
         self.pressed = True
 
 
@@ -37,9 +37,9 @@ class Button:
 if __name__ == "__main__":
     from board import Board
     rpi = Board()
-    print('DEBUG: Board instance created')
+    #print('DEBUG: Board instance created')
     button = Button(rpi, 22)
-    print('DEBUG: Button set up on pin 22')
+    #print('DEBUG: Button set up on pin 22')
     while True:
         if button.pressed:
             print('button pressed')
