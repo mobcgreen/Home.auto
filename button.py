@@ -21,7 +21,7 @@ class Button:
             self.__board.GPIO.setup(self.__pin, self.__board.GPIO.IN)
             print('Button set up on pin: ' + str(self.__pin))
         elif resistor:
-            self.__board.GPIO.set(self.__pin, self.__board.GPIO.IN, pull_up_down=GPIO.PUD_UP)
+            self.__board.GPIO.setup(self.__pin, self.__board.GPIO.IN, pull_up_down=GPIO.PUD_UP)
         else:
             print('Error setting up resistor')
 
