@@ -41,7 +41,7 @@ if __name__ == "__main__":
     button = Button(rpi, 7)
     print('DEBUG: Button set up on pin 22')
     while True:
-        if button.pressed:
+        if not button.pressed:
             print('button pressed')
-            button.pressed = False
+            button.pressed = True
     rpi.GPIO.cleanup()
