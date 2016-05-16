@@ -1,25 +1,25 @@
-import RPi.GPIO as gpio
-import time
 
 class Buzzer:
 
-    def __init__(self, gpio_object, buzzerPin):
+    def __init__(self, gpio_object, buzpin):
         self._board = gpio_object
-        self.buzzerPin = buzzerPin
-        self.buzzMethod()
-        print('setting up')
+        self._buzpin = buzpin
+        self._setup_buzzer()
 
-    def buzzMethod(self):
-        self._board(buzzerPin)
-        print('setting output')
-        self._board(buzzerPin, self._board.GPIO.HIGH)
-        print('HIGH')
-        time.sleep(2)
-        self._board(buzzerPin, self._board.GPIO.LOW)
-        print('LOW')
+    def _setup_buzzer(self):
+        self._board.GPIO.setup(self._buzpin, self._board.GPIO.OUT)
+
+    def buz_on(self):
+        self._board.GPIO.output(self._buzpin, self._board.GPIO.HIGH)
+
+    def buz_off(self):
+        self._board.GPIO.output(self._buzpin, self._board.GPIO.LOW)
 
 if __name__ == "__main__":
     from board import Board
-    buzzerPin = 24
-    board = Board()
-    Buzzer(buzzerPin, board)
+    from time import sleep
+    rpi = Board()
+    buzzer = Buzzer(rpi, 24)
+    buzzer.buz_on()
+    sleep(2)
+    buzzer.buz_off()
