@@ -20,7 +20,7 @@ class Temperature:
 
     @property
     def F(self):
-        return self.__read_temp()[1]
+        return self._read_temp()[1]
 
     def __read_temp_raw(self):
         f = open(device_file, 'r')
