@@ -16,7 +16,6 @@ class Buzzer:
 
 if __name__ == "__main__":
     from board import Board
-    gpio.setmode(gpio.BOARD)
     buzzerPin = 24
     board = Board()
     Buzzer(buzzerPin, board)
