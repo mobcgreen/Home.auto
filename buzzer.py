@@ -7,12 +7,16 @@ class Buzzer:
         self.board = board
         self.buzzerPin = buzzerPin
         self.buzzMethod()
+        print('setting up')
 
     def buzzMethod(self):
         self.board.setup(buzzerPin, self.board.OUT)
+        print('setting output')
         self.board.output(buzzerPin, HIGH)
+        print('HIGH')
         time.sleep(2)
         self.board.output(buzzerPin, LOW)
+        print('LOW')
 
 if __name__ == "__main__":
     from board import Board
