@@ -10,7 +10,7 @@ class Buzzer:
         print('setting up')
 
     def buzzMethod(self):
-        self._board(buzzerPin, self._board.OUT)
+        self._board(buzzerPin)
         print('setting output')
         self._board.output(buzzerPin, self._board.GPIO.HIGH)
         print('HIGH')
