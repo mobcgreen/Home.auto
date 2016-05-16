@@ -3,19 +3,19 @@ import time
 
 class Buzzer:
 
-    def __init__(self, board, buzzerPin):
-        self.board = board
+    def __init__(self, gpio_object, buzzerPin):
+        self._board = gpio_object
         self.buzzerPin = buzzerPin
         self.buzzMethod()
         print('setting up')
 
     def buzzMethod(self):
-        self.board.setup(buzzerPin, self.board.OUT)
+        self._board.setup(buzzerPin, self._board.OUT)
         print('setting output')
-        self.board.output(buzzerPin, HIGH)
+        self._board.output(buzzerPin, self._board.GPIO.HIGH)
         print('HIGH')
         time.sleep(2)
-        self.board.output(buzzerPin, LOW)
+        self._board.output(buzzerPin, self._board.GPIO.LOW)
         print('LOW')
 
 if __name__ == "__main__":
