@@ -15,7 +15,7 @@ class Pir:
         print ('Ready')
         while True:
             if self.__board.GPIO.input(self.__pirpin):
-                print 'Motion Detected!'
+                print ('Motion Detected!')
             sleep(1)
 
 
