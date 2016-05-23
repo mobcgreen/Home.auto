@@ -16,8 +16,10 @@ class Pir:
         while True:
             #print('im running')
             if self.__board.GPIO.input(self.__pirpin) == 1:
+                print(self.__board.GPIO.input(self.__pirpin))
                 print ('Motion Detected!')
             else:
+                print(self.__board.GPIO.input(self.__pirpin))
                 print ('Not Detected :(')
             sleep(1)
 
