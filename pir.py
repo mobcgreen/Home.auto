@@ -7,7 +7,7 @@ class Pir:
         self.__setup_pir()
 
     def __setup_pir(self):
-        self.__board.GPIO.setup(self.__pirpin, self.__board.GPIO.OUT)
+        self.__board.GPIO.setup(self.__pirpin, self.__board.GPIO.IN)
 
     def pir_motion(self):
         print ('PIR Module Test(CTRL + C to exit)')
