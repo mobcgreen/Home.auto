@@ -21,7 +21,7 @@ while True:
             led.blue_on()
             light = True
             button.pressed = False
-        else:
+        elif light:
             led.turn_off()
             light = False
 
