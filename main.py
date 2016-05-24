@@ -19,7 +19,6 @@ while True:
     if button.pressed:
         if not light:
             led.blue_on()
-            sleep(0.5)
             light = True
             button.pressed = False
         if light:
