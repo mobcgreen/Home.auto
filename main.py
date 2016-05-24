@@ -9,7 +9,7 @@ from time import sleep
 rpi = Board()
 
 led = Led(rpi, 13)
-led = RGB_led(rpi, 20, 21, 16)
+rgb = RGB_led(rpi, 20, 21, 16)
 button = Button(rpi, 22)
 buzzer = Buzzer(rpi, 24)
 pir = Pir(rpi, 14)
@@ -18,11 +18,11 @@ light = False
 while True:
     if button.pressed:
         if not light:
-            led.blue_on()
+            led.led_on()
             light = True
             button.pressed = False
         elif light:
-            led.turn_off()
+            led.led_off()
             light = False
             button.pressed = False
 
