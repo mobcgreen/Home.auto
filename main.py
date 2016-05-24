@@ -14,6 +14,7 @@ button = Button(rpi, 22)
 buzzer = Buzzer(rpi, 24)
 pir = Pir(rpi, 14)
 
-if button.pressed:
-    led.green_on()
+while True:
+    if button.pressed:
+        led.green_on()
 
