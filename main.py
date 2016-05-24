@@ -24,4 +24,5 @@ while True:
         elif light:
             led.turn_off()
             light = False
+            button.pressed = False
 
