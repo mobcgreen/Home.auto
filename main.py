@@ -17,5 +17,7 @@ pir = Pir(rpi, 14)
 while True:
     if button.pressed:
         led.green_on()
+        button.pressed = False
     else:
         led.turn_off()
+        
