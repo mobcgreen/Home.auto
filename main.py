@@ -26,8 +26,8 @@ while True:
             light = False
             button.pressed = False
 
-sequence = [rgb.blue_on(), rgb.green_on(), rgb.red_on()]
+    #sequence = [rgb.blue_on(), rgb.green_on(), rgb.red_on()]
 
-for light in sequence:
-    sequence(light)
-    sleep(1)
+    #for light in sequence:
+    #    sequence(light)
+    #    sleep(1)
