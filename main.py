@@ -13,18 +13,6 @@ rgb = RGB_led(rpi, 20, 21, 16)
 button = Button(rpi, 22)
 buzzer = Buzzer(rpi, 24)
 pir = Pir(rpi, 14)
-
-light = False
-while True:
-    if pir.pir_motion():
-        if not light:
-            buzzer.buz_on()
-            light = True
-            pir.pir_motion = False
-        elif light:
-            buzzer.buz_off()
-            light = False
-            pir.pir_motion = False
 '''
 light = False
 while True:
@@ -37,19 +25,19 @@ while True:
             led.led_off()
             light = False
             button.pressed = False
-
-motion = True
-while False:
-    if pir.pir_motion():
-        if not motion:
-            buzzer.buz_off()
-            motion = True
-            pir.pir_motion = True
-        elif motion:
-            buzzer.buz_on()
-            motion = False
-            pir.pir_motion = True
 '''
+buz = False
+while True:
+    if button.pressed:
+        if not buz:
+            buzzer.buz_on()
+            buz = True
+            button.pressed = False
+        elif buz:
+            buzzer.buz_off()
+            buz = False
+            button.pressed = False
+
     #sequence = [rgb.blue_on(), rgb.green_on(), rgb.red_on()]
 
     #for light in sequence:
