@@ -18,6 +18,18 @@ light = False
 while True:
     if button.pressed:
         if not light:
+            buzzer.buz_on()
+            light = True
+            button.pressed = False
+        elif light:
+            buzzer.buz_off()
+            light = False
+            button.pressed = False
+'''
+light = False
+while True:
+    if button.pressed:
+        if not light:
             led.led_on()
             light = True
             button.pressed = False
@@ -25,7 +37,7 @@ while True:
             led.led_off()
             light = False
             button.pressed = False
-'''
+
 motion = True
 while False:
     if pir.pir_motion():
