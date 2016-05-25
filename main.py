@@ -13,7 +13,7 @@ rgb = RGB_led(rpi, 20, 21, 16)
 button = Button(rpi, 22)
 buzzer = Buzzer(rpi, 24)
 pir = Pir(rpi, 14)
-'''
+
 light = False
 while True:
     if button.pressed:
@@ -25,7 +25,7 @@ while True:
             led.led_off()
             light = False
             button.pressed = False
-'''
+
 buz = False
 while True:
     if button.pressed:
