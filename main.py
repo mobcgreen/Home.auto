@@ -31,11 +31,11 @@ buz = False
 while True:
     if button.pressed:
         if not buz:
-            button2.buz_on()
+            buzzer.buz_on()
             buz = True
             button.pressed = False
         elif buz:
-            button2.buz_off()
+            buzzer.buz_off()
             buz = False
             button.pressed = False
 
