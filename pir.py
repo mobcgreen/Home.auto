@@ -29,7 +29,7 @@ if __name__ == '__main__':
     from board import Board
     #from time import sleep
     rpi = Board()
-    pir = Pir(rpi, 6)
+    pir = Pir(rpi, 14)
     pir.pir_motion()
     rpi.GPIO.cleanup()
 
