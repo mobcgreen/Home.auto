@@ -26,7 +26,7 @@ while True:
             light = False
             button.pressed = False
 motion = True
-while motion == True:
+while True:
     if pir.pir_motion():
         if not motion:
             buzzer.buz_on()
