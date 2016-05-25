@@ -25,6 +25,17 @@ while True:
             led.led_off()
             light = False
             button.pressed = False
+motion = True
+while False:
+    if pir.pir_motion():
+        if not motion:
+            buzzer.buz_on()
+            motion = False
+            pir.pir_motion = True
+        elif motion:
+            buzzer.buz_off()
+            motion = True
+            pir.pir_motion = True
 
     #sequence = [rgb.blue_on(), rgb.green_on(), rgb.red_on()]
 
