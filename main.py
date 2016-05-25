@@ -19,7 +19,6 @@ while True:
     if pir.pir_motion():
         if not light:
             buzzer.buz_on()
-            sleep(2)
             light = True
             pir.pir_motion = False
         elif light:
