@@ -1,3 +1,4 @@
+from time import sleep
 
 class Pir:
 
@@ -26,7 +27,7 @@ class Pir:
 
 if __name__ == '__main__':
     from board import Board
-    from time import sleep
+    #from time import sleep
     rpi = Board()
     pir = Pir(rpi, 6)
     pir.pir_motion()
