@@ -16,15 +16,15 @@ pir = Pir(rpi, 14)
 
 light = False
 while True:
-    if button.pressed:
+    if pir.pir_motion():
         if not light:
             buzzer.buz_on()
             light = True
-            button.pressed = False
+            pir.pir_motion = False
         elif light:
             buzzer.buz_off()
             light = False
-            button.pressed = False
+            pir.pir_motion = False
 '''
 light = False
 while True:
