@@ -33,11 +33,11 @@ while True:
             buzzer.buz_on()
             buz = True
             button.pressed = False
-        elif buz:
+        '''elif buz:
             buzzer.buz_off()
             buz = False
             button.pressed = False
-
+'''
     #sequence = [rgb.blue_on(), rgb.green_on(), rgb.red_on()]
 
     #for light in sequence:
